@@ -23,7 +23,7 @@ else
 	pic = -fPIC
 endif
 
-all: %DESTDIR%/$(lib_a) %DESTDIR%/$(lib_so)
+all: %DESTDIR%/$(lib_a) %DESTDIR%/$(lib_so) %FAKESO%
 
 %DESTDIR%/$(lib_a): $(obj)
 	$(AR) rcs $@ $(obj)
