@@ -5,14 +5,9 @@ use NativeCall;
 use LibraryMake;
 use NativeHelpers::Array;
 
-sub library {
+my sub library {
     my $so = get-vars('')<SO>;
-    my $libname = "libkdtree$so";
-    my $lib = %?RESOURCES{$libname}.Str;
-    if not $lib.defined {
-	die "Unable to find library";
-    }
-    $lib;
+    return ~%?RESOURCES{"libkdtree$so"};
 }
 
 my sub kd_res_free(Algorithm::KdTree::Response) is native(&library) { * }

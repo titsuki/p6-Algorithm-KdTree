@@ -6,14 +6,9 @@ use LibraryMake;
 use NativeHelpers::Array;
 use Algorithm::KdTree::Response;
 
-sub library {
+my sub library {
     my $so = get-vars('')<SO>;
-    my $libname = "libkdtree$so";
-    my $lib = %?RESOURCES{$libname}.Str;
-    if not $lib.defined {
-	die "Unable to find library";
-    }
-    $lib;
+    return ~%?RESOURCES{"libkdtree$so"};
 }
 
 my sub kd_insert(Algorithm::KdTree, CArray[num64], Pointer) returns int32 is native(&library) { * }
