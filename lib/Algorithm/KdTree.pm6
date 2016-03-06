@@ -2,26 +2,16 @@ use v6;
 unit class Algorithm::KdTree is export is repr('CStruct');
 
 use NativeCall;
-use LibraryMake;
+use Native::Resources;
 use NativeHelpers::Array;
 use Algorithm::KdTree::Response;
 
-sub library {
-    my $so = get-vars('')<SO>;
-    my $libname = "libkdtree$so";
-    my $lib = %?RESOURCES{$libname}.Str;
-    if not $lib.defined {
-	die "Unable to find library";
-    }
-    $lib;
-}
-
-my sub kd_insert(Algorithm::KdTree, CArray[num64], Pointer) returns int32 is native(&library) { * }
-my sub kd_nearest(Algorithm::KdTree, CArray[num64]) returns Algorithm::KdTree::Response is native(&library) { * }
-my sub kd_nearest_range(Algorithm::KdTree, CArray[num64], num64) returns Algorithm::KdTree::Response is native(&library) { * }
-my sub kd_create(int32) returns Algorithm::KdTree is native(&library) { * }
-my sub kd_free(Algorithm::KdTree) is native(&library) { * }
-my sub kd_clear(Algorithm::KdTree) is native(&library) { * }
+my sub kd_insert(Algorithm::KdTree, CArray[num64], Pointer) returns int32 is native(resource-lib('kdtree', :%?RESOURCES)) { * }
+my sub kd_nearest(Algorithm::KdTree, CArray[num64]) returns Algorithm::KdTree::Response is native(resource-lib('kdtree', :%?RESOURCES)) { * }
+my sub kd_nearest_range(Algorithm::KdTree, CArray[num64], num64) returns Algorithm::KdTree::Response is native(resource-lib('kdtree', :%?RESOURCES)) { * }
+my sub kd_create(int32) returns Algorithm::KdTree is native(resource-lib('kdtree', :%?RESOURCES)) { * }
+my sub kd_free(Algorithm::KdTree) is native(resource-lib('kdtree', :%?RESOURCES)) { * }
+my sub kd_clear(Algorithm::KdTree) is native(resource-lib('kdtree', :%?RESOURCES)) { * }
 my int32 $c-dimension;
 
 method insert(@array) returns Int {
