@@ -130,11 +130,11 @@ If the Kd-Tree has no elements or no elements are found in the hypersphere, it r
 
 =head1 AUTHOR
 
-okaoka <cookbook_000@yahoo.co.jp>
+titsuki <cookbook_000@yahoo.co.jp>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2016 okaoka
+Copyright 2016 titsuki
 
 Copyright 2007-2011 John Tsiombikas <nuclear@member.fsf.org>
 

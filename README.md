@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/okaoka/p6-Algorithm-KdTree.svg?branch=master)](https://travis-ci.org/okaoka/p6-Algorithm-KdTree)
+[![Build Status](https://travis-ci.org/titsuki/p6-Algorithm-KdTree.svg?branch=master)](https://travis-ci.org/titsuki/p6-Algorithm-KdTree)
 
 NAME
 ====
@@ -87,12 +87,12 @@ Returns a response which includes positions in the hypersphere. The center of th
 AUTHOR
 ======
 
-okaoka <cookbook_000@yahoo.co.jp>
+titsuki <cookbook_000@yahoo.co.jp>
 
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2016 okaoka
+Copyright 2016 titsuki
 
 Copyright 2007-2011 John Tsiombikas <nuclear@member.fsf.org>
 
