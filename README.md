@@ -87,7 +87,7 @@ Returns a response which includes positions in the hypersphere. The center of th
 AUTHOR
 ======
 
-titsuki <cookbook_000@yahoo.co.jp>
+titsuki <titsuki@cpan.org>
 
 COPYRIGHT AND LICENSE
 =====================
