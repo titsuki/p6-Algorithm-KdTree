@@ -18,7 +18,7 @@
   ],
   "description" : "a perl6 binding for C implementation of the Kd-Tree Algorithm (https://github.com/jtsiomb/kdtree)",
   "test-depends" : [ ],
-  "version" : "0.01",
+  "version" : "0.02",
   "authors" : [
     "titsuki"
   ]
