@@ -37,6 +37,7 @@ method next() returns Algorithm::KdTree::Response {
 
 method set-dimension(Int $p6-dim) {
     $c-dim = $p6-dim;
+    return self;
 }
 
 method get-position() {

@@ -11,7 +11,6 @@ use Algorithm::KdTree;
 	}
     }
     my $res = $kdtree.nearest-range([11e0,11e0], sqrt(2e0) - 1e-9);
-    $res.set-dimension(2);
     is $res.is-end(), True, "It should return empty response when the radius is short";
 }
 
@@ -23,7 +22,6 @@ use Algorithm::KdTree;
 	}
     }
     my $res = $kdtree.nearest-range([11e0,11e0], sqrt(2e0));
-    $res.set-dimension(2);
     is $res.is-end(), False, "It should have a response";
     is $res.get-position(), [10e0,10e0], "When the target is on the line. It should return a response which includes a element at the upper-right-most position";
 }
@@ -36,7 +34,6 @@ use Algorithm::KdTree;
 	}
     }
     my $res = $kdtree.nearest-range([11e0,11e0], sqrt(2e0) + 1e-9);
-    $res.set-dimension(2);
     is $res.is-end(), False, "It should have a response";
     is $res.get-position(), [10e0,10e0], "It should return a response which includes a element at the upper-right-most position";
 }
@@ -49,7 +46,6 @@ use Algorithm::KdTree;
 	}
     }
     my $res = $kdtree.nearest-range([-1e0,-1e0], sqrt(2e0) - 1e-9);
-    $res.set-dimension(2);
     is $res.is-end(), True, "It should return empty response when the radius is short";
 }
 
@@ -61,7 +57,6 @@ use Algorithm::KdTree;
 	}
     }
     my $res = $kdtree.nearest-range([-1e0,-1e0], sqrt(2e0));
-    $res.set-dimension(2);
     is $res.is-end(), False, "It should have a response";
     is $res.get-position(), [0e0,0e0], "When the target is on the line. It should return a response which includes a element at the bottom-left-most position";
 }
@@ -74,7 +69,6 @@ use Algorithm::KdTree;
 	}
     }
     my $res = $kdtree.nearest-range([-1e0,-1e0], sqrt(2e0) + 1e-9);
-    $res.set-dimension(2);
     is $res.is-end(), False, "It should have a response";
     is $res.get-position(), [0e0,0e0], "It should return a response which includes a element at the bottom-left-most position";
 }

@@ -30,12 +30,12 @@ method insert(@array) returns Int {
 
 method nearest(@array) returns Algorithm::KdTree::Response {
     my $carray = copy-to-carray(@array, num64);
-    return kd_nearest(self, $carray);
+    return kd_nearest(self, $carray).set-dimension(@array.elems);
 }
 
 method nearest-range(@array, Num:D $range) returns Algorithm::KdTree::Response {
     my $carray = copy-to-carray(@array, num64);
-    return kd_nearest_range(self, $carray, $range);
+    return kd_nearest_range(self, $carray, $range).set-dimension(@array.elems);
 }
 
 method new(Int:D $p6-dimension) {
@@ -63,14 +63,12 @@ Algorithm::KdTree - a perl6 binding for C implementation of the Kd-Tree Algorith
   $kdtree.insert([10e0,10e0,10e0]);
   
   my $nearest-response = $kdtree.nearest([1e0,1e0,1e0]);
-  $nearest-response.set-dimension(3); # must call this method
   if (not $nearest-response.is-end()) {
      $nearest-response.get-position().say; # [0e0, 0e0, 0e0]
   }
 
   my $range-response = $kdtree.nearest-range([9e0,9e0,9e0], sqrt(5));
   my @array;
-  $range-response.set-dimension(3); # must call this method
   while (not $range-response.is-end()) {
      @array.push($range-response.get-position());
      $range-response.next();
@@ -101,7 +99,6 @@ Inserts a k-dimensional array.
 =head3 nearest(@array)
 
        my $response = $kdtree.nearest([1e0, 2e0, 3e0]);
-       $response.set-dimension(3); # must call this method, in this case 3-dimensional Kd-Tree have been constructed.
        if (not $response.is-end()) {
        	  my $position = $response.get-position();
 
@@ -115,7 +112,6 @@ If the Kd-Tree has no elements, it returns a response which does not include any
 =head3 nearest-range(@array, Num $radius)
 
        my $response = $kdtree.nearest-range([1e0, 2e0, 3e0], 10e0);
-       $response.set-dimension(3); # must call this method
        while (not $response.is-end()) {
        	  my $position = $response.get-position();
 	  
