@@ -6,11 +6,12 @@
     "LibraryMake"
   ],
   "depends" : [
-    "NativeHelpers::Array"
+    "NativeHelpers::Array",
+    "NativeHelpers::Callback"
   ],
   "description" : "a perl6 binding for C implementation of the Kd-Tree Algorithm (https://github.com/jtsiomb/kdtree)",
-  "name" : "Algorithm::KdTree",
   "license" : "BSD-3-Clause",
+  "name" : "Algorithm::KdTree",
   "perl" : "6.c",
   "provides" : {
     "Algorithm::KdTree" : "lib/Algorithm/KdTree.pm6",
@@ -20,6 +21,7 @@
     "libraries/kdtree"
   ],
   "source-url" : "git://github.com/titsuki/p6-Algorithm-KdTree.git",
+  "tags" : [ ],
   "test-depends" : [ ],
   "version" : "0.05"
 }

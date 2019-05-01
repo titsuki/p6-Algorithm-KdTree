@@ -3,6 +3,7 @@ unit class Algorithm::KdTree::Response is export is repr('CPointer');
 
 use NativeCall;
 use NativeHelpers::Array;
+use NativeHelpers::Callback;
 
 my constant $library = %?RESOURCES<libraries/kdtree>.Str;
 
@@ -15,7 +16,6 @@ my sub kd_res_item(Algorithm::KdTree::Response, CArray[num64]) returns Pointer i
 my sub kd_res_item_data(Algorithm::KdTree::Response) returns Pointer is native($library) { * }
 my CArray[num64] $c-pos;
 my int32 $c-dim = 0;
-my Pointer $c-data;
 my int32 $c-index = 0;
 
 method size() returns Int {
@@ -39,8 +39,15 @@ method set-dimension(Int $p6-dim) {
 method get-position() {
     my @array <== map { 0e0 } <== [0..^$c-dim];
     $c-pos = copy-to-carray(@array, num64);
-    $c-data = kd_res_item(self, $c-pos);
+    my $c-data = kd_res_item(self, $c-pos);
     return copy-to-array($c-pos, $c-dim);
+}
+
+method get-position-with-item() {
+    my @array <== map { 0e0 } <== [0..^$c-dim];
+    $c-pos = copy-to-carray(@array, num64);
+    my $id = NativeHelpers::Callback.id(kd_res_item(self, $c-pos));
+    return %(position => copy-to-array($c-pos, $c-dim), body => NativeHelpers::Callback.lookup($id));
 }
 
 submethod DESTROY {

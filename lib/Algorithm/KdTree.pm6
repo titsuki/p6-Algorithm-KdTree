@@ -7,7 +7,17 @@ use Algorithm::KdTree::Response;
 
 my constant $library = %?RESOURCES<libraries/kdtree>.Str;
 
-my sub kd_insert(Algorithm::KdTree, CArray[num64], Pointer) returns int32 is native($library) { * }
+class thing is repr('CPointer') {}
+sub make_a_thing(--> thing) is native {}
+
+role Thingable is export {
+    has thing $.thing;
+    submethod TWEAK {
+       $!thing := make_a_thing;
+    }
+}
+
+my sub kd_insert(Algorithm::KdTree, CArray[num64], int64) returns int32 is native($library) { * }
 my sub kd_nearest(Algorithm::KdTree, CArray[num64]) returns Algorithm::KdTree::Response is native($library) { * }
 my sub kd_nearest_range(Algorithm::KdTree, CArray[num64], num64) returns Algorithm::KdTree::Response is native($library) { * }
 my sub kd_create(int32) returns Algorithm::KdTree is native($library) { * }
@@ -15,13 +25,21 @@ my sub kd_free(Algorithm::KdTree) is native($library) { * }
 my sub kd_clear(Algorithm::KdTree) is native($library) { * }
 my int32 $c-dimension;
 
-method insert(@array) returns Int {
+multi method insert(@array) returns Int {
     if (@array.elems != $c-dimension) {
-	die "Error: The dimension of the input is different from kd-tree's one.";
+        die "Error: The dimension of the input is different from kd-tree's one.";
     }
-    my Pointer $null;
     my $carray = copy-to-carray(@array, num64);
-    return kd_insert(self, $carray, $null);
+    return kd_insert(self, $carray, 0);
+}
+
+multi method insert(@array, Thingable $object) returns Int {
+    if (@array.elems != $c-dimension) {
+        die "Error: The dimension of the input is different from kd-tree's one.";
+    }
+    my $carray = copy-to-carray(@array, num64);
+    NativeHelpers::Callback.store($object, $object.thing);
+    return kd_insert(self, $carray, NativeHelpers::Callback.id($object.thing));
 }
 
 method nearest(@array) returns Algorithm::KdTree::Response {

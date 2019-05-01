@@ -34,6 +34,11 @@ extern "C" {
 struct kdtree;
 struct kdres;
 
+typedef struct {
+    int a;
+} *thing;
+
+thing make_a_thing();
 
 /* create a kd-tree for "k"-dimensional data */
 struct kdtree *kd_create(int k);
