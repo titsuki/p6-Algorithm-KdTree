@@ -87,7 +87,6 @@ struct kdres {
 
 #define SQ(x)			((x) * (x))
 
-
 static void clear_rec(struct kdnode *node, void (*destr)(void*));
 static int insert_rec(struct kdnode **node, const double *pos, void *data, int dir, int dim);
 static int rlist_insert(struct res_node *list, struct kdnode *item, double dist_sq);
@@ -107,7 +106,10 @@ static void free_resnode(struct res_node*);
 #define free_resnode(n)		free(n)
 #endif
 
-
+thing make_a_thing()
+{
+    return (thing) malloc(sizeof(int));
+}
 
 struct kdtree *kd_create(int k)
 {

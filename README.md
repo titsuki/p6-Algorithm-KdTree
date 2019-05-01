@@ -98,3 +98,4 @@ SEE ALSO
 ========
 
   * kdtree [https://github.com/jtsiomb/kdtree](https://github.com/jtsiomb/kdtree)
+
