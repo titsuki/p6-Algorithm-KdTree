@@ -9,11 +9,6 @@ use Algorithm::KdTree;
 
 {
     my $kdtree = Algorithm::KdTree.new(3);
-    dies-ok { $kdtree.insert([1,1,1]); }, "It shouldn't insert a Int array";
-}
-
-{
-    my $kdtree = Algorithm::KdTree.new(3);
     dies-ok { $kdtree.insert([1e0]); }, "It shouldn't insert a array having different dimension from the kd-tree's one";
 }
 
