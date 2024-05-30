@@ -12,18 +12,18 @@ SYNOPSIS
 
     my $kdtree = Algorithm::KdTree.new(3);
 
-    $kdtree.insert([0e0,0e0,0e0]);
-    $kdtree.insert([10e0,10e0,10e0]);
+    $kdtree.insert: [0e0,0e0,0e0];
+    $kdtree.insert: [10e0,10e0,10e0];
 
-    my $nearest-response = $kdtree.nearest([1e0,1e0,1e0]);
-    if (not $nearest-response.is-end()) {
-       $nearest-response.get-position().say; # [0e0, 0e0, 0e0]
+    my $nearest-response = $kdtree.nearest: [1e0,1e0,1e0];
+    unless $nearest-response.is-end {
+       $nearest-response.get-position.say; # [0e0, 0e0, 0e0]
     }
 
     my $range-response = $kdtree.nearest-range([9e0,9e0,9e0], sqrt(5));
     my @array;
-    while (not $range-response.is-end()) {
-       @array.push($range-response.get-position());
+    until $range-response.is-end {
+       @array.push: $range-response.get-position;
        $range-response.next();
     }
     @array.perl.say; # [[10e0, 10e0, 10e0], ]
@@ -98,3 +98,4 @@ SEE ALSO
 ========
 
   * kdtree [https://github.com/jtsiomb/kdtree](https://github.com/jtsiomb/kdtree)
+
