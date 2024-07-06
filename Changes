@@ -1,0 +1,32 @@
+Revision history for Algorithm::KdTree
+
+{{$NEXT}}
+    - TBD
+
+v0.05
+   - Fixes:
+      - Fix broken classes
+   - Additions:
+   - Efficiency:
+
+v0.04
+   - Fixes:
+      - Add tests for Mac OSX
+      - Improve the build process
+   - Additions:
+   - Efficiency:
+
+v0.03
+   - Fixes:
+      - Call set-dimension method internally
+   - Additions:
+   - Efficiency:
+
+v0.02
+   - Fixes:
+      - Fix author info
+   - Additions:
+   - Efficiency:
+
+v0.01
+   - tagging version 0.01

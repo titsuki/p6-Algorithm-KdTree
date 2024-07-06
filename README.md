@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/titsuki/p6-Algorithm-KdTree.svg?branch=master)](https://travis-ci.org/titsuki/p6-Algorithm-KdTree)
+[![Actions Status](https://github.com/titsuki/p6-Algorithm-KdTree/workflows/test/badge.svg)](https://github.com/titsuki/p6-Algorithm-KdTree/actions)
 
 NAME
 ====
