@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/titsuki/p6-Algorithm-KdTree/workflows/test/badge.svg)](https://github.com/titsuki/p6-Algorithm-KdTree/actions)
+[![Actions Status](https://github.com/titsuki/p6-Algorithm-KdTree/actions/workflows/test.yml/badge.svg)](https://github.com/titsuki/p6-Algorithm-KdTree/actions)
 
 NAME
 ====

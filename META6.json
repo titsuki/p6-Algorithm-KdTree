@@ -3,8 +3,11 @@
     "titsuki"
   ],
   "build-depends": [
-    "LibraryMake"
+    "LibraryMake",
+    "Distribution::Builder::MakeFromJSON",
+    "Algorithm::KdTree::CustomBuilder"
   ],
+  "builder": "Algorithm::KdTree::CustomBuilder",
   "depends": [
     "NativeHelpers::Array"
   ],
@@ -14,6 +17,7 @@
   "perl": "6.c",
   "provides": {
     "Algorithm::KdTree": "lib/Algorithm/KdTree.pm6",
+    "Algorithm::KdTree::CustomBuilder": "lib/Algorithm/KdTree/CustomBuilder.pm6",
     "Algorithm::KdTree::Response": "lib/Algorithm/KdTree/Response.pm6"
   },
   "resources": [

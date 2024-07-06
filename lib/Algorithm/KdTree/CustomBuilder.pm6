@@ -1,7 +1,9 @@
 use LibraryMake;
+use Distribution::Builder::MakeFromJSON;
 
-class Build {
-    method build($workdir) {
+class Algorithm::KdTree::CustomBuilder:auth<zef:titsuki> is Distribution::Builder::MakeFromJSON {
+    method build(IO() $work-dir = $*CWD) {
+        my $workdir = ~$work-dir;
 	my $srcdir = "$workdir/src";
 	my %vars = get-vars($workdir);
 	%vars<kdtree> = $*VM.platform-library-name('kdtree'.IO);
@@ -12,10 +14,5 @@ class Build {
 	chdir($srcdir);
 	shell(%vars<MAKE>);
 	chdir($goback);
-    }
-
-    method isa($what) {
-	return True if $what.^name eq 'Panda::Builder';
-	callsame;
     }
 }
