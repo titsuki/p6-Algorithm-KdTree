@@ -8,7 +8,11 @@ Revision history for Algorithm::KdTree
       - Use CustomBuilder.pm6 instead of Build.pm [608d30a]
       - Add missing zef build . command [7709a4f]
       - Drop Windows from support OS list [5f9923d]
+      - Use zef instead of panda [#8]
+      - Remove failing test [#10]
+      - Make example code simpler [#11] [#12]
    - Additions:
+      - Use SPDX identifier in license field of META6.json [#7]
    - Efficiency:
 
 v0.05
