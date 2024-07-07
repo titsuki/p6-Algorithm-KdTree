@@ -1,7 +1,7 @@
 use LibraryMake;
 use Distribution::Builder::MakeFromJSON;
 
-class Algorithm::KdTree::CustomBuilder:auth<zef:titsuki> is Distribution::Builder::MakeFromJSON {
+class Algorithm::KdTree::CustomBuilder:ver<0.0.6>:auth<zef:titsuki> is Distribution::Builder::MakeFromJSON {
     method build(IO() $work-dir = $*CWD) {
         my $workdir = ~$work-dir;
 	my $srcdir = "$workdir/src";

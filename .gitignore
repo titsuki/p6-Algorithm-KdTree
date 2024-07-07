@@ -4,4 +4,6 @@
 /.panda-work
 /resources/*.so
 /resources/*.dylib
+/resources/libraries/*.so
+/resources/libraries/*.dylib
 .precomp/

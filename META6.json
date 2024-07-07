@@ -1,6 +1,9 @@
 {
+  "auth": [
+    "zef:titsuki"
+  ],
   "authors": [
-    "titsuki"
+    "Itsuki Toyota"
   ],
   "build-depends": [
     "LibraryMake",
@@ -28,5 +31,5 @@
   ],
   "test-depends": [
   ],
-  "version": "0.05"
+  "version": "0.0.6"
 }

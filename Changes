@@ -1,7 +1,15 @@
 Revision history for Algorithm::KdTree
 
 {{$NEXT}}
-    - TBD
+
+0.0.6  2024-07-07T10:44:05+09:00
+   - Fixes:
+      - Use github workflow instead of travisCI [a0d9a6a]
+      - Use CustomBuilder.pm6 instead of Build.pm [608d30a]
+      - Add missing zef build . command [7709a4f]
+      - Drop Windows from support OS list [5f9923d]
+   - Additions:
+   - Efficiency:
 
 v0.05
    - Fixes:
