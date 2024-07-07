@@ -1,5 +1,5 @@
 use v6;
-unit class Algorithm::KdTree::Response:ver<0.0.6>:auth<zef:titsuki> is export is repr('CPointer');
+unit class Algorithm::KdTree::Response:ver<0.0.7>:auth<zef:titsuki> is export is repr('CPointer');
 
 use NativeCall;
 use NativeHelpers::Array;

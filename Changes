@@ -2,6 +2,9 @@ Revision history for Algorithm::KdTree
 
 {{$NEXT}}
 
+0.0.7  2024-07-07T11:50:12+09:00
+   - 0.0.6 release is failed
+
 0.0.6  2024-07-07T10:44:05+09:00
    - Fixes:
       - Use github workflow instead of travisCI [a0d9a6a]
