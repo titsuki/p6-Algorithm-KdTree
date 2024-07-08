@@ -14,7 +14,7 @@
   "depends": [
     "NativeHelpers::Array"
   ],
-  "description": "a perl6 binding for C implementation of the Kd-Tree Algorithm (https://github.com/jtsiomb/kdtree)",
+  "description": "Raku binding for C implementation of the Kd-Tree Algorithm (https://github.com/jtsiomb/kdtree)",
   "license": "BSD-3-Clause",
   "name": "Algorithm::KdTree",
   "perl": "6.c",
