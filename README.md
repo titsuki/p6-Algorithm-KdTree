@@ -1,9 +1,9 @@
-[![Actions Status](https://github.com/titsuki/p6-Algorithm-KdTree/actions/workflows/test.yml/badge.svg)](https://github.com/titsuki/p6-Algorithm-KdTree/actions)
+[![Actions Status](https://github.com/titsuki/raku-Algorithm-KdTree/actions/workflows/test.yml/badge.svg)](https://github.com/titsuki/raku-Algorithm-KdTree/actions)
 
 NAME
 ====
 
-Algorithm::KdTree - a perl6 binding for C implementation of the Kd-Tree Algorithm (https://github.com/jtsiomb/kdtree)
+Algorithm::KdTree - a Raku binding for C implementation of the Kd-Tree Algorithm (https://github.com/jtsiomb/kdtree)
 
 SYNOPSIS
 ========
@@ -31,7 +31,7 @@ SYNOPSIS
 DESCRIPTION
 ===========
 
-Algorithm::KdTree is a perl6 binding for C implementation of the Kd-Tree Algorithm (https://github.com/jtsiomb/kdtree). Kd-Tree is the efficient algorithm for searching nearest neighbors in the k-dimensional space.
+Algorithm::KdTree is a Raku binding for C implementation of the Kd-Tree Algorithm (https://github.com/jtsiomb/kdtree). Kd-Tree is the efficient algorithm for searching nearest neighbors in the k-dimensional space.
 
 CONSTRUCTOR
 -----------

@@ -14,7 +14,7 @@
   "depends": [
     "NativeHelpers::Array"
   ],
-  "description": "Raku binding for C implementation of the Kd-Tree Algorithm (https://github.com/jtsiomb/kdtree)",
+  "description": "a Raku binding for C implementation of the Kd-Tree Algorithm (https://github.com/jtsiomb/kdtree)",
   "license": "BSD-3-Clause",
   "name": "Algorithm::KdTree",
   "perl": "6.c",
@@ -26,7 +26,7 @@
   "resources": [
     "libraries/kdtree"
   ],
-  "source-url": "https://github.com/titsuki/p6-Algorithm-KdTree.git",
+  "source-url": "https://github.com/titsuki/raku-Algorithm-KdTree.git",
   "tags": [
   ],
   "test-depends": [

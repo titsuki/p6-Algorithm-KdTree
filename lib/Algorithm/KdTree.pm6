@@ -47,7 +47,7 @@ submethod DESTROY {
 
 =head1 NAME
 
-Algorithm::KdTree - a perl6 binding for C implementation of the Kd-Tree Algorithm (https://github.com/jtsiomb/kdtree)
+Algorithm::KdTree - a Raku binding for C implementation of the Kd-Tree Algorithm (https://github.com/jtsiomb/kdtree)
 
 =head1 SYNOPSIS
 
@@ -73,7 +73,7 @@ Algorithm::KdTree - a perl6 binding for C implementation of the Kd-Tree Algorith
 
 =head1 DESCRIPTION
 
-Algorithm::KdTree is a perl6 binding for C implementation of the Kd-Tree Algorithm (https://github.com/jtsiomb/kdtree). Kd-Tree is the efficient algorithm for searching nearest neighbors in the k-dimensional space.
+Algorithm::KdTree is a Raku binding for C implementation of the Kd-Tree Algorithm (https://github.com/jtsiomb/kdtree). Kd-Tree is the efficient algorithm for searching nearest neighbors in the k-dimensional space.
 
 =head2 CONSTRUCTOR
 
