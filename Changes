@@ -2,6 +2,9 @@ Revision history for Algorithm::KdTree
 
 {{$NEXT}}
 
+0.0.8  2024-08-08T21:50:45+09:00
+   - Make auth single value instead of array [5eeccd]
+
 0.0.7  2024-07-07T11:50:12+09:00
    - 0.0.6 release is failed
 
