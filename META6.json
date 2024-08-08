@@ -1,7 +1,5 @@
 {
-  "auth": [
-    "zef:titsuki"
-  ],
+  "auth": "zef:titsuki",
   "authors": [
     "Itsuki Toyota"
   ],
